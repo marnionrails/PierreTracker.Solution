@@ -50,7 +50,7 @@ namespace PierreTracker.Tests
       decimal price = 3.0M;
       Order testOrder = new Order(title, description, price);
       //Act
-      string result = testOrder.Description;
+      decimal result = testOrder.Price;
       //Assert
       Assert.AreEqual(price, result);
     }
