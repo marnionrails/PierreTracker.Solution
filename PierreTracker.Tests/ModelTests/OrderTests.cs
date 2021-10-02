@@ -28,6 +28,20 @@ namespace PierreTracker.Tests
       Assert.AreEqual(title, result);
     }
 
+    [TestMethod]
+      public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string title = "Cider Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      string result = testOrder.Title;
+      //Assert
+      Assert.AreEqual(description, result);
+    }
+
   
 
   }
