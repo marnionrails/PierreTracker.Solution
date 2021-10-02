@@ -41,6 +41,19 @@ namespace PierreTracker.Tests
       //Assert
       Assert.AreEqual(description, result);
     }
+    [TestMethod]
+      public void GetPrice_ReturnsPrice_Decimal()
+    {
+      //Arrange
+      string title = "Cider Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      string result = testOrder.Description;
+      //Assert
+      Assert.AreEqual(price, result);
+    }
 
   
 
