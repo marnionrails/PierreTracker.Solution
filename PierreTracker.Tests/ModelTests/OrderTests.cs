@@ -54,7 +54,20 @@ namespace PierreTracker.Tests
       //Assert
       Assert.AreEqual(price, result);
     }
-
+    [TestMethod]
+      public void GetTime_ReturnsTime_DateTime()
+    {
+      //Arrange
+      string title = "Cider Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      string date = "Date";
+      string result = testOrder.Date;
+      //Assert
+      Assert.AreEqual(date, result);
+    }
   
 
   }
