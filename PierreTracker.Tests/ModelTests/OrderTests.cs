@@ -6,8 +6,13 @@ using System;
 namespace PierreTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+    
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -117,5 +122,23 @@ namespace PierreTracker.Tests
       //Assert
       Assert.AreEqual(date, result);
     }
+
+     [TestMethod]
+    public void GetId_ReturnOrderId_Int()
+    {
+      //Arrange
+      string name = "Test Vendor";
+      string description = "Test Description";
+      decimal price = 3.0M;
+      Order testOrder = new Order(name, description, price);
+
+      //Act
+      int result = testOrder.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
+
+
   }
 }
