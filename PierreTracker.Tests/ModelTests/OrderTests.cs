@@ -68,7 +68,5 @@ namespace PierreTracker.Tests
       //Assert
       Assert.AreEqual(date, result);
     }
-  
-
   }
 }
