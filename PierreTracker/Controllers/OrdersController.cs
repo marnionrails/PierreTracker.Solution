@@ -1,4 +1,4 @@
-/* using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using PierreTracker.Models;
 using System.Collections.Generic;
 
@@ -19,27 +19,23 @@ namespace PierreTracker.Controllers
       return View();
     }
 
-      [HttpPost("/orders")]
-    public ActionResult Create(string description)
+     [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      Item myItem = new Item(description);
-      return RedirectToAction("Index");
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
-      [HttpPost("/items/delete")]
-    public ActionResult DeleteAll()
+    
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Item.ClearAll();
-      return View();
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
-
-     [HttpGet("/items/{id}")]
-    public ActionResult Show(int id)
-    {
-      Item foundItem = Item.Find(id);
-      return View(foundItem);
-    }
-
-
   }
-} */
+}

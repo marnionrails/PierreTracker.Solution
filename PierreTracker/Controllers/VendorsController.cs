@@ -37,7 +37,6 @@ namespace Models.Controllers
       return View(model);
     }
       
-    // This one creates new Items within a given Category, not new Categories:
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, decimal orderPrice)
     {
