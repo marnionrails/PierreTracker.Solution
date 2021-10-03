@@ -62,7 +62,7 @@ namespace PierreTracker.Tests
       Vendor testVendor = new Vendor(name, description);
 
       string newDescription = "Baked Breakfast Foods";
-      testVendor.Description = "Marni";
+      testVendor.Description = newDescription;
       string result = testVendor.Description;
 
       Assert.AreEqual(newDescription, result);
