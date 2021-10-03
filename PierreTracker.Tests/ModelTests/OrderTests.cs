@@ -150,7 +150,7 @@ namespace PierreTracker.Tests
       decimal price02 = 5.0M;
       Order newOrder1 = new Order(title01, description01, price01);
       Order newOrder2 = new Order(title02, description02, price02);
-      List<Order> newList = new List<Order> {newOrder2};
+      List<Order> newList = new List<Order> {newOrder1, newOrder2};
 
       //Act
       List<Order> result = Order.GetAll();
