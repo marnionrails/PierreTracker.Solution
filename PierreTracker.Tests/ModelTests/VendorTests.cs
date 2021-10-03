@@ -68,5 +68,19 @@ namespace PierreTracker.Tests
       Assert.AreEqual(newDescription, result);
       
     }
+       [TestMethod]
+    public void GetId_ReturnVendorId_Int()
+    {
+      //Arrange
+      string name = "Test Vendor";
+      string description = "Test Description";
+      Vendor testVendor = new Vendor(name, description);
+
+      //Act
+      int result = testVendor.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
