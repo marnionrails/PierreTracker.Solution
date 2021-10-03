@@ -127,16 +127,36 @@ namespace PierreTracker.Tests
     public void GetId_ReturnOrderId_Int()
     {
       //Arrange
-      string name = "Test Vendor";
+      string title = "Test Order";
       string description = "Test Description";
       decimal price = 3.0M;
-      Order testOrder = new Order(name, description, price);
+      Order testOrder = new Order(title, description, price);
 
       //Act
       int result = testOrder.Id;
 
       //Assert
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_OrderList()
+    {
+      //Arrange
+      string title01 = "Test Order";
+      string description01 = "Test Description";
+      decimal price01 = 3.0M;
+      string title02 = "Test Order 2";
+      string description02 = "Test Description 2";
+      decimal price02 = 5.0M;
+      Order newOrder1 = new Order(title01, description01, price01);
+      Order newOrder2 = new Order(title02, description02, price02);
+      List<Order> newList = new List<Order> {newOrder2};
+
+      //Act
+      List<Order> result = Order.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
 
 
