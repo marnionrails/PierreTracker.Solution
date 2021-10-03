@@ -28,6 +28,23 @@ namespace PierreTracker.Tests
       Assert.AreEqual(title, result);
     }
 
+     [TestMethod]
+      public void SetTitle_ReturnsTitle_String()
+    {
+      //Arrange
+      string title = "Cider Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      string newTitle = "Chocolate Donuts";
+      testOrder.Title = newTitle;
+      string result = testOrder.Title;
+      //Assert
+      Assert.AreEqual(newTitle, result);
+    }
+
+
     [TestMethod]
       public void GetDescription_ReturnsDescription_String()
     {
@@ -42,6 +59,22 @@ namespace PierreTracker.Tests
       Assert.AreEqual(description, result);
     }
     [TestMethod]
+      public void SetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string title = "Chocolate Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      string newDescription = "Yummy rich chocolate";
+      testOrder.Description = newDescription;
+      string result = testOrder.Description;
+      //Assert
+      Assert.AreEqual(newDescription, result);
+    }
+
+    [TestMethod]
       public void GetPrice_ReturnsPrice_Decimal()
     {
       //Arrange
@@ -53,6 +86,22 @@ namespace PierreTracker.Tests
       decimal result = testOrder.Price;
       //Assert
       Assert.AreEqual(price, result);
+    }
+
+    [TestMethod]
+      public void SetPrice_ReturnsPrice_Decimal()
+    {
+      //Arrange
+      string title = "Cider Donuts";
+      string description = "Donuts made of cider and sugar";
+      decimal price = 3.0M;
+      Order testOrder = new Order(title, description, price);
+      //Act
+      decimal newPrice = 4.0M;
+      testOrder.Price = newPrice;
+      decimal result = testOrder.Price;
+      //Assert
+      Assert.AreEqual(newPrice, result);
     }
     [TestMethod]
       public void GetTime_ReturnsTime_DateTime()
