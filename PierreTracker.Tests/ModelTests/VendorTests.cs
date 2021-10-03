@@ -122,7 +122,7 @@ namespace PierreTracker.Tests
       Vendor result = Vendor.Find(2);
 
       //Assert
-      Assert.AreEqual(newVendor1, result);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
