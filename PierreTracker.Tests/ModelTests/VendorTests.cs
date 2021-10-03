@@ -53,5 +53,20 @@ namespace PierreTracker.Tests
       Assert.AreEqual(description, result);
       
     }
+
+     [TestMethod]
+    public void SetDescription_ReturnsDescription_String()
+    {
+      string name = "Kenny's Cafe";
+      string description = "Healthy Baked Goods";
+      Vendor testVendor = new Vendor(name, description);
+
+      string newDescription = "Baked Breakfast Foods";
+      testVendor.Description = "Marni";
+      string result = testVendor.Description;
+
+      Assert.AreEqual(newDescription, result);
+      
+    }
   }
 }
