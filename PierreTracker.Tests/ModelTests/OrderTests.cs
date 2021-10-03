@@ -63,7 +63,7 @@ namespace PierreTracker.Tests
       decimal price = 3.0M;
       Order testOrder = new Order(title, description, price);
       //Act
-      string date = "Date";
+      string date = DateTime.Now.ToShortDateString();
       string result = testOrder.Date;
       //Assert
       Assert.AreEqual(date, result);
