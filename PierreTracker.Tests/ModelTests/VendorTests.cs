@@ -98,7 +98,7 @@ namespace PierreTracker.Tests
       string description02 = "All chocolate";
       Vendor newVendor1 = new Vendor(name01, description01);
       Vendor newVendor2 = new Vendor(name02, description02);
-      List<Vendor> newList = new List<Vendor> { };
+      List<Vendor> newList = new List<Vendor> {newVendor1, newVendor2};
 
       //Act
       List<Vendor> result = Vendor.GetAll();
