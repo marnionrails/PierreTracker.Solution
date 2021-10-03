@@ -159,6 +159,26 @@ namespace PierreTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+     [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      //Arrange
+      string title01 = "Test Order";
+      string description01 = "Test Description";
+      decimal price01 = 3.0M;
+      string title02 = "Test Order2";
+      string description02 = "Test Description2";
+      decimal price02 = 5.0M;
+      Order newOrder1 = new Order(title01, description01, price01);
+      Order newOrder2 = new Order(title02, description02, price02);
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result);
+    }
+
 
   }
 }
