@@ -36,7 +36,7 @@ namespace PierreTracker.Tests
 
       string newName = "John's Cafe";
       testVendor.Name = newName;
-      string result = name;
+      string result = testVendor.Name;
 
       Assert.AreEqual(newName, result);
       
